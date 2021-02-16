@@ -1,4 +1,4 @@
-from os import listdir, mkdir
+from os import listdir, mkdir, environ
 from os.path import isfile, join
 from shutil import move
 
@@ -7,6 +7,8 @@ def getfiles(dir):
 
 def getfolders(dir):
     return [f for f in listdir(dir) if not isfile(join(dir, f))]
+
+desktop_path = join(join(environ['USERPROFILE']), 'Desktop')
 
 files = getfiles('C:\\Users\\Nate\\Desktop')
 folders = getfolders('C:\\Users\\Nate\\Desktop')
