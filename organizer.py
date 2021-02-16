@@ -10,8 +10,8 @@ def getfolders(dir):
 
 desktop_path = join(join(environ['USERPROFILE']), 'Desktop')
 
-files = getfiles('C:\\Users\\Nate\\Desktop')
-folders = getfolders('C:\\Users\\Nate\\Desktop')
+files = getfiles(desktop_path)
+folders = getfolders(desktop_path)
 extensions = []
 
 for a in files:
@@ -20,9 +20,9 @@ for a in files:
     if a_ext not in extensions:
         extensions.append(a_ext)
         if a_ext not in folders:
-            mkdir(f'C:\\Users\\Nate\\Desktop\\{a_ext}')
+            mkdir(f'{desktop_path}\\{a_ext}')
             folders.append(a_ext)
-    move(f'C:\\Users\\Nate\\Desktop\\{a}', f'C:\\Users\\Nate\\Desktop\\{a_ext}')
+    move(f'{desktop_path}\\{a}', f'{desktop_path}\\{a_ext}')
 
         
 
